@@ -35,6 +35,7 @@ export default defineConfig(({ mode }) => {
 
   // 开发模式配置
   return {
+    base: '/tag-textarea/',
     plugins: [vue()],
     server: {
       port: 3000,

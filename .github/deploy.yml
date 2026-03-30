@@ -1,0 +1,31 @@
+name: tag-textarea 自动部署
+
+on:
+  push:
+    branches: ["master"]   # 当 main 分支有推送时触发
+
+permissions:
+  contents: write        # 允许写入内容
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 拉取代码
+        uses: actions/checkout@v3
+
+      - name: 安装 Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: 安装依赖并构建
+        run: |
+          npm install
+          npm run build
+
+      - name: 部署到 GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist   # 构建后的文件夹，Vue/React 通常是 dist
