@@ -2,6 +2,8 @@
 
 一个基于 Vue 3 的富文本标签输入组件，支持在文本中插入和编辑标签。
 
+[English](README_EN.md) | 简体中文
+
 ## 在线体验
 
 [立即体验](https://damahas.github.io/tagged-textarea/index.html)
