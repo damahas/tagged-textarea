@@ -1,6 +1,6 @@
 {
   "name": "tagged-textarea",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "A textarea component with tag support",
   "main": "dist/tagged-textarea.umd.js",
   "module": "dist/tagged-textarea.es.js",

@@ -384,7 +384,7 @@ defineExpose({
 <template>
   <div
     ref="editorRef"
-    class="editor"
+    class="tagged-textarea-editor"
     :class="{ 'is-disabled': disabled }"
     :style="{ minHeight: minHeight }"
     :contenteditable="!disabled"
@@ -396,8 +396,8 @@ defineExpose({
   />
 </template>
 
-<style scoped>
-.editor {
+<style>
+.tagged-textarea-editor {
   padding: 5px 11px;
   border: 1px solid #dcdfe6;
   border-radius: 4px;
@@ -405,32 +405,30 @@ defineExpose({
   line-height: 1.5;
   color: #606266;
   background-color: #fff;
-  box-sizing: border-box;
+  box-sizing: border-box;    
+  text-align: left;
 }
 
-.editor:focus {
+.tagged-textarea-editor:focus {
   outline: none;
   border-color: #409eff;
 }
 
-.editor:empty::before {
+.tagged-textarea-editor:empty::before {
   content: attr(data-placeholder);
   color: #c0c4cc;
 }
 
-.editor.is-disabled {
+.tagged-textarea-editor.is-disabled {
   background-color: #f5f7fa;
   border-color: #e4e7ed;
   color: #c0c4cc;
   cursor: not-allowed;
 }
-</style>
 
-<style>
-.editor-tag {
+.tagged-textarea-editor .editor-tag {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
   padding: 0 8px;
   margin: 0 4px;
   border-radius: 4px;
@@ -444,11 +442,11 @@ defineExpose({
   height: 1.5em;
 }
 
-.editor-tag .tag-content {
+.tagged-textarea-editor .editor-tag .tag-content {
   display: inline-block;
 }
 
-.tag-delete {
+.tagged-textarea-editor .tag-delete {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -462,7 +460,7 @@ defineExpose({
   user-select: none;
 }
 
-.tag-delete:hover {
+.tagged-textarea-editor .tag-delete:hover {
   opacity: 1;
   background-color: rgba(255, 255, 255, 0.2);
 }

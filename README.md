@@ -1,4 +1,4 @@
-# TagTextarea
+# TaggedTextarea
 
 一个基于 Vue 3 的富文本标签输入组件，支持在文本中插入和编辑标签。
 
@@ -40,7 +40,7 @@ pnpm add tagged-textarea
 
 ```vue
 <template>
-  <TagTextarea v-model="content" />
+  <TaggedTextarea v-model="content" />
 </template>
 
 <script setup>
@@ -120,7 +120,7 @@ interface ContentItem {
 
 ```vue
 <template>
-  <TagTextarea ref="textareaRef" v-model="content" placeholder="请输入内容" />
+  <TaggedTextarea ref="textareaRef" v-model="content" placeholder="请输入内容" />
   <button @click="addTag">添加标签</button>
   <button @click="clearContent">清空内容</button>
 </template>
@@ -149,7 +149,7 @@ const clearContent = () => {
 
 ```vue
 <template>
-  <TagTextarea
+  <TaggedTextarea
     v-model="content"
     :tag-colors="{
       default: '#409eff',
@@ -179,7 +179,7 @@ const content = ref([
 ```vue
 <template>
   <div>
-    <TagTextarea ref="textareaRef" v-model="content" placeholder="点击下方按钮插入标签" />
+    <TaggedTextarea ref="textareaRef" v-model="content" placeholder="点击下方按钮插入标签" />
     <div class="toolbar">
       <button @click="insertTag('username', '用户名', 'username')">用户</button>
       <button @click="insertTag('date', '日期', 'date')">日期</button>
@@ -205,7 +205,7 @@ const insertTag = (type, label, value) => {
 
 ```vue
 <template>
-  <TagTextarea
+  <TaggedTextarea
     v-model="content"
     :min-height="'120px'"
     :tag-colors="tagColors"
@@ -237,7 +237,7 @@ const content = ref([
 
 ```vue
 <template>
-  <TagTextarea
+  <TaggedTextarea
     v-model="content"
     :disabled="true"
     placeholder="禁用状态，不可编辑"
